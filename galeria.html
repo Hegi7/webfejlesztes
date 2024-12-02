@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hegedős Csanád">
+    <meta name="copyright" content="Tájékoztató célokra">
+    <meta name="description" content="Tartalmazza: galéria.">
+    <title>Galéria</title>
+    <link rel="stylesheet" href="rubik.css">
+    <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/slick-theme.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .slider {
+            width: 80%;
+            min-width: 400px;
+            margin: 100px auto;
+        }
+
+        .slick-slide {
+            margin: 0px 5px;
+        }
+
+        .slick-slide img {
+            width: 100%;
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            color: black;
+        }
+
+        .slick-slide {
+            transition: all ease-in-out .3s;
+            opacity: .2;
+        }
+
+        .slick-active {
+            opacity: .5;
+        }
+
+        .slick-current {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="kezdo.html">Kezdőlap</a>
+        <a href="klasszikus.html">Klasszikus Kockák</a>
+        <a href="fejleszto.html">Fejlesztő Játékok</a>
+        <a class="active" href="#">Galéria</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="kerdoiv.html">Kérdőív</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+    </nav>
+    
+    <header>
+        <h1>Galéria</h1>
+        <p></p>
+    </header>
+
+        <section class="center slider">
+            <div><img src="kepek/2x2.jpg" alt="kep1"></div>
+            <div><img src="kepek/3x3.jpg" alt="kep2"></div>
+            <div><img src="kepek/4x4.jpg" alt="kep3"></div>
+            <div><img src="kepek/5x5.jpg" alt="kep4"></div>
+            <div><img src="kepek/mirror.jpg" alt="kep5"></div>
+            <div><img src="kepek/snake.jpg" alt="kep6"></div>
+            <div><img src="kepek/verseny.jpg" alt="kep7"></div>
+        </section>   
+
+    <footer>
+        <p>&copy; 2024 Hegedős Csanád</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript">
+    </script>
+    <script src="slick-1.8.1/slick/slick.js" type="text/javascript" charset="utf-8">
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".center").slick({
+                dots: true,
+                infinite: true,
+                centerMode: true,
+                centerPadding: '60px',
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                responsive: [
+                    {
+                        breakpoint: 800,
+                        settings: {
+                            arrows: true,
+                            centerPadding: '60px',
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            arrows: true,
+                            centerPadding: '60px',
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+
+
+        });
+    </script>
+</body>
+</html>

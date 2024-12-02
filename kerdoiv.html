@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hegedős Csanád">
+    <meta name="copyright" content="Tájékoztató célokra">
+    <meta name="description" content="Tartalmazza: kérdőív.">
+    <script src="jquery-3.7.1.js"></script>
+    <script src="validator_jq/dist/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#myform").validate({
+                rules: {
+                    firstname: "required",
+                    lastname: "required",
+                    age: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    opinion: {
+                        required: true,
+                        minlength: 20,
+                    },
+                },
+                messages: {
+                    firstname: " Írd be a keresztneved!",
+                    lastname: " Írd be a vezetékneved!",
+                    age: " Add meg az életkorod!",
+                    email: " Valós email címet adj meg!",
+                    opinion: {
+                        required: " Írd le a véleményed!",
+                        minlength: " Legalább 20 karakter hosszú legyen!",
+                    },
+                },
+            });
+        });
+    </script>
+    <title>Kérdőív</title>
+    <link rel="stylesheet" href="rubik.css">
+    <style>
+        label.error {
+            color: #FB3A3A;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="kezdo.html">Kezdőlap</a>
+        <a href="klasszikus.html">Klasszikus Kockák</a>
+        <a href="fejleszto.html">Fejlesztő Játékok</a>
+        <a href="galeria.html">Galéria</a>
+        <a href="quiz.html">Quiz</a>
+        <a class="active" href="#">Kérdőív</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+    </nav>
+    
+    <header>
+        <h1>Kérdőív</h1>
+        <p>Kérjük, töltsd ki a kérdőívet, hogy megoszthasd a véleményedet a Rubik kockáról!</p>
+    </header>
+
+    <div class="container">
+        <form action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" method="post" id="myform" novalidate>
+            <label for="firstname">Keresztnév:</label><br>
+            <input type="text" id="firstname" name="firstname" placeholder="Írd be a keresztneved"><br><br>
+
+            <label for="lastname">Vezetéknév:</label><br>
+            <input type="text" id="lastname" name="lastname" placeholder="Írd be a vezetékneved"><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email" placeholder="Pl. valami@gmail.com"><br><br>
+    
+            <label for="age">Életkor:</label><br>
+            <input type="number" id="age" name="age" min="1" max="120" placeholder="Pl. 25"><br><br>
+    
+            <label for="frequency">Milyen gyakran játszol Rubik kockával?</label><br>
+            <select id="frequency" name="frequency">
+                <option value="soha">Soha</option>
+                <option value="ritkán">Ritkán</option>
+                <option value="gyakran">Gyakran</option>
+                <option value="mindig">Mindig</option>
+            </select><br><br>
+    
+            <label for="level">Milyen szinten tudod kirakni a Rubik kockát?</label><br>
+            <input type="radio" id="beginner" name="level" value="kezdo">
+            <label for="beginner">Kezdő</label><br>
+            <input type="radio" id="intermediate" name="level" value="kozephalado">
+            <label for="intermediate">Középhaladó</label><br>
+            <input type="radio" id="advanced" name="level" value="halado">
+            <label for="advanced">Haladó</label><br>
+            <input type="radio" id="expert" name="level" value="profi">
+            <label for="expert">Profi</label><br>
+            <input type="radio" id="cant" name="level" value="nem_tud">
+            <label for="cant">Nem tudom kirakni</label><br><br>
+    
+            <label>Milyen méretű Rubik kockával játszol leggyakrabban?</label><br>
+            <input type="checkbox" id="2x2" name="cube_size_2x2" value="ON">
+            <label for="2x2">2x2</label><br>
+            <input type="checkbox" id="3x3" name="cube_size_3x3" value="ON">
+            <label for="3x3">3x3</label><br>
+            <input type="checkbox" id="4x4" name="cube_size_4x4" value="ON">
+            <label for="4x4">4x4</label><br>
+            <input type="checkbox" id="other" name="cube_size_other" value="ON">
+            <label for="other">Egyéb</label><br><br>
+    
+            <label for="satisfaction">Mennyire szereted a Rubik kockákat?</label><br>
+            <input type="range" id="satisfaction" name="satisfaction" min="1" max="10" value="5">
+            <span>1 (Nem szeretem) - 10 (Nagyon szeretem)</span><br><br>
+
+            <label for="opinion">Fejtsd ki véleményed!</label><br>
+            <textarea id="opinion" name="opinion" rows="4" cols="50" placeholder="Írd le a véleményed..."></textarea><br><br>
+    
+            <input class="submit" type="submit" value="Küldés">
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Hegedős Csanád</p>
+    </footer>
+</body>
+</html>

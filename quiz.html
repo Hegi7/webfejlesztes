@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hegedős Csanád">
+    <meta name="copyright" content="Tájékoztató célokra">
+    <meta name="description" content="Tartalmazza: quiz.">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="rubik.css">
+</head>
+<body>
+    <nav>
+        <a href="kezdo.html">Kezdőlap</a>
+        <a href="klasszikus.html">Klasszikus Kockák</a>
+        <a href="fejleszto.html">Fejlesztő Játékok</a>
+        <a href="galeria.html">Galéria</a>
+        <a class="active" href="#">Quiz</a>
+        <a href="kerdoiv.html">Kérdőív</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+    </nav>
+    
+    <header>
+        <h1>Quiz</h1>
+        <p>Derítsd ki mennyit tudsz a Rubik kockáról!</p>
+    </header>
+
+    <div class="container">
+        <form action="#">
+            <fieldset>
+                <legend>1. Melyik oldalt kell először kirakni?</legend>
+                <label for="color">Válaszd ki a helyes választ:</label>
+                <select id="color" name="color">
+                    <option value="feher">Fehér</option>
+                    <option value="kek">Kék</option>
+                    <option value="piros">Piros</option>
+                    <option value="sarga">Sárga</option>
+                    <option value="zold">Zöld</option>
+                    <option value="narancs">Narancs</option>
+                    <option value="nem_szamit">Nem számít</option>
+                </select>
+            </fieldset><br>
+    
+            <fieldset>
+                <legend>2. Hány négyzet található egy klasszikus Rubik kocka oldalán?</legend>
+                <label for="squares">Válaszd ki a helyes választ:</label>
+                <input type="number" id="squares" name="squares" min="0">
+            </fieldset><br>
+    
+            <fieldset>
+                <legend>3. Mi a Rubik kocka származási helye?</legend>
+                <label for="country">Válaszd ki a helyes választ:</label><br>
+                <input type="radio" id="hungary" name="country" value="Hungary">
+                <label for="hungary">Magyarország</label><br>
+                <input type="radio" id="usa" name="country" value="USA">
+                <label for="usa">USA</label><br>
+                <input type="radio" id="germany" name="country" value="Germany">
+                <label for="germany">Németország</label><br>
+            </fieldset><br>
+    
+            <fieldset>
+                <legend>4. Mi a Rubik kocka feltalálójának a neve?</legend>
+                <label for="inventor">Írd be a helyes választ:</label>
+                <input type="text" id="inventor" name="inventor" placeholder="Írd be a nevet">
+            </fieldset><br>
+    
+            <fieldset>
+                <legend>5. Melyik évben és hónapban találta fel a Rubik kockát?</legend>
+                <label for="year">Válaszd ki az évet és hónapot:</label>
+                <input type="month" id="year" name="year/month">
+            </fieldset><br>
+    
+            <fieldset>
+                <legend>6. Hány másodperc volt a világ leggyorsabb Rubik kocka kirakása?</legend>
+                <label for="time">Válaszd ki a helyes választ:</label>
+                <input type="range" id="time" name="time" min="1" max="30" step="1" value="15">
+                <span id="rangeValue">15</span> másodperc
+            </fieldset><br>
+    
+            <fieldset>
+                <legend>7. Melyek alapvető színek egy Rubik kockán?</legend>
+                <label>Válaszd ki a helyes választ:</label><br>
+                <input type="checkbox" id="green" name="green" value="ON">
+                <label for="green">Zöld</label><br>
+                <input type="checkbox" id="purple" name="purple" value="ON">
+                <label for="purple">Lila</label><br>
+                <input type="checkbox" id="blue" name="blue" value="ON">
+                <label for="blue">Kék</label><br>
+                <input type="checkbox" id="yellow" name="yellow" value="ON">
+                <label for="yellow">Sárga</label><br>
+                <input type="checkbox" id="red" name="red" value="ON">
+                <label for="red">Piros</label><br>
+                <input type="checkbox" id="black" name="black" value="ON">
+                <label for="black">Fekete</label><br>
+            </fieldset><br>
+    
+            <input class="submit" type="submit" value="Kész vagyok!" id="mybutton">
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Hegedős Csanád</p>
+    </footer>
+
+    <script src="rubik.js"></script>
+</body>
+</html>

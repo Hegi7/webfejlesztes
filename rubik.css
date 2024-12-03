@@ -167,3 +167,29 @@ img {
         padding: 10px 0;
     }
 }
+
+@media (max-width: 600px) {
+    body {
+        font-size: 90%;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    nav {
+        gap: 5px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    footer {
+        padding: 10px 5px;
+    }
+}
